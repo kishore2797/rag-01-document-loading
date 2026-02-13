@@ -1,23 +1,23 @@
-# RAG Tutorial 01 — Document Loading & Parsing
+# 📄 RAG Tutorial 01 — Document Loading & Parsing
 
 <p align="center">
-  <a href="https://github.com/BellaBe/mastering-rag"><img src="https://img.shields.io/badge/Series-Mastering_RAG-blue?style=for-the-badge" /></a>
+  <a href="https://github.com/kishore2797/mastering-rag"><img src="https://img.shields.io/badge/Series-Mastering_RAG-blue?style=for-the-badge" /></a>
   <img src="https://img.shields.io/badge/Part-1_of_16-green?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Difficulty-Beginner-brightgreen?style=for-the-badge" />
 </p>
 
-> **Part of the [Mastering RAG](https://github.com/BellaBe/mastering-rag) tutorial series**  
-> Previous: — | Next: [02 — Chunking Strategies](https://github.com/BellaBe/rag-02-chunking-strategies)
+> **Part of the [Mastering RAG](https://github.com/kishore2797/mastering-rag) tutorial series**  
+> Previous: — | Next: [02 — Chunking Strategies](https://github.com/kishore2797/rag-02-chunking-strategies)
 
 ---
 
-## Real-World Scenario
+## 🌍 Real-World Scenario
 
 > Imagine you're building a **legal contract analyzer** for a law firm. Lawyers upload hundreds of contracts (PDFs, Word docs) and need to search them. Before any AI magic can happen, you need to reliably extract clean text from every file format — handling scanned PDFs, weird DOCX formatting, and corrupted files gracefully. That's this tutorial.
 
 ---
 
-## What You'll Build
+## 🏗️ What You'll Build
 
 A full-stack document ingestion and parsing system that accepts **PDF, DOCX, TXT, and Markdown** files through a unified API. Each format is handled by a dedicated parser that extracts clean, structured text — ready for chunking, embedding, and retrieval in downstream RAG pipelines.
 
@@ -29,7 +29,7 @@ API: POST /api/documents/upload
 Output: { text: "...", metadata: { source, pages, format, size, ... } }
 ```
 
-## Key Concepts
+## 🔑 Key Concepts
 
 - **Document loaders**: format-specific parsers (PyPDF2 for PDF, python-docx for DOCX, etc.)
 - **Metadata extraction**: page numbers, headings, file info, word count
@@ -37,14 +37,14 @@ Output: { text: "...", metadata: { source, pages, format, size, ... } }
 - **Unified API**: one endpoint accepts any supported format
 - **Error handling**: graceful handling of corrupted files, unsupported formats
 
-## Tech Stack
+## 🛠 Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
 | Backend | Python 3.11+ · FastAPI · PyPDF2 · python-docx · markdown |
 | Frontend | React 19 · Vite · Tailwind CSS |
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 rag-01-document-loading/
@@ -69,7 +69,7 @@ rag-01-document-loading/
 └── README.md
 ```
 
-## Quick Start
+## 🚀 Quick Start
 
 ### Backend
 
@@ -90,7 +90,7 @@ npm run dev
 
 Open http://localhost:5173 — upload documents and see parsed output.
 
-## What You'll Learn
+## 📖 What You'll Learn
 
 1. How different document formats store text internally
 2. Why metadata preservation matters for RAG
@@ -98,7 +98,7 @@ Open http://localhost:5173 — upload documents and see parsed output.
 4. Common pitfalls: encoding issues, scanned PDFs, corrupted files
 5. How this fits into the larger RAG pipeline (feeds into Tutorial 02: Chunking)
 
-## API Endpoints
+## 🔌 API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -107,12 +107,12 @@ Open http://localhost:5173 — upload documents and see parsed output.
 | GET | `/api/documents/{id}` | Get parsed document by ID |
 | DELETE | `/api/documents/{id}` | Delete a document |
 
-## Prerequisites
+## 📋 Prerequisites
 
 - Python 3.11+ and Node.js 18+
 - No prior RAG knowledge needed — this is the starting point
 
-## Exercises
+## ✏️ Exercises
 
 Try these after completing the tutorial:
 
@@ -122,7 +122,7 @@ Try these after completing the tutorial:
 4. **Error handling**: Create a corrupted PDF and ensure the API returns a useful error, not a crash
 5. **Batch upload**: Modify the API to accept a ZIP file with multiple documents inside
 
-## Common Mistakes
+## ⚠️ Common Mistakes
 
 | Mistake | Why It Happens | How to Fix |
 |---------|---------------|------------|
@@ -131,19 +131,19 @@ Try these after completing the tutorial:
 | Scanned PDF returns empty text | PyPDF2 can't OCR — it only extracts embedded text | Add Tesseract OCR as a fallback for image-based PDFs |
 | Large files crash the server | No file size limit on the upload endpoint | Add a max file size check (e.g., 50MB) in the API |
 
-## Further Reading
+## 📚 Further Reading
 
 - [PyPDF2 Documentation](https://pypdf2.readthedocs.io/) — PDF parsing internals
 - [python-docx Documentation](https://python-docx.readthedocs.io/) — DOCX structure and extraction
 - [Unstructured.io](https://unstructured.io/) — Production-grade document parsing library
 - [Apache Tika](https://tika.apache.org/) — Multi-format parser used in enterprise search
 
-## Next Steps
+## ➡️ Next Steps
 
-Once you can reliably parse documents into clean text, head to **[Tutorial 02 — Chunking Strategies](https://github.com/BellaBe/rag-02-chunking-strategies)** to learn how to split that text into optimal pieces for embedding and retrieval.
+Once you can reliably parse documents into clean text, head to **[Tutorial 02 — Chunking Strategies](https://github.com/kishore2797/rag-02-chunking-strategies)** to learn how to split that text into optimal pieces for embedding and retrieval.
 
 ---
 
 <p align="center">
-  <sub>Part of <a href="https://github.com/BellaBe/mastering-rag">Mastering RAG — From Zero to Production</a></sub>
+  <sub>Part of <a href="https://github.com/kishore2797/mastering-rag">Mastering RAG — From Zero to Production</a></sub>
 </p>
