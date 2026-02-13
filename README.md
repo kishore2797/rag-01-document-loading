@@ -90,6 +90,18 @@ npm run dev
 
 Open http://localhost:5173 — upload documents and see parsed output.
 
+## 📦 Example
+
+A minimal runnable example is in the `example/` folder:
+
+```bash
+cd example
+pip install -r requirements.txt
+python example.py
+```
+
+It loads a sample text file (and supports PDF if you have one) and prints extracted text and metadata.
+
 ## 📖 What You'll Learn
 
 1. How different document formats store text internally
